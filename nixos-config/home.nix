@@ -125,7 +125,15 @@
     '';
   };
 
-
+  programs.kitty = {
+    enable = true;
+    font.name = "CaskaydiaCoveNerdFont";
+    shellIntegration.enableFishIntegration = true;
+    settings = {
+      confirm_os_window_close = 0;
+    };
+  };
+  
   # starship - an customizable prompt for any shell
   programs.starship = {
     enable = true;

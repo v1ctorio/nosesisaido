@@ -106,7 +106,6 @@ nixpkgs.config.allowUnfree = true;
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     neofetch
-    kitty
     neovim
     hyprpaper
     mpvpaper
@@ -235,7 +234,8 @@ nixpkgs.config.allowUnfree = true;
   services.flatpak.enable = true;
 
   fonts.packages = with pkgs; [
-  nerdfonts
+  (nerdfonts.override { fonts = [ "FiraCode" "CascadiaCode" ]; })
+  noto-fonts-cjk
   ];
 
 
@@ -257,11 +257,11 @@ nixpkgs.config.allowUnfree = true;
       export PATH=~/.yarn/bin:$PATH
       export PATH=~/.npm-global/bin:$PATH
 
-        if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]
-      then
-        shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=""
-        exec ${pkgs.fish}/bin/fish $LOGIN_OPTION
-      fi
+    if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]
+    then
+      shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=""
+      exec ${pkgs.fish}/bin/fish $LOGIN_OPTION
+    fi
     '';
   };
 
