@@ -289,6 +289,16 @@ nixpkgs.config.allowUnfree = true;
   };
 
 
+  boot.loader.systemd-boot.configurationLimit = 7;
+
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 7d";
+  };
+  
+  nix.settings.auto-optimise-store = true;
+
 
 
 #  environment.sessionVariables.NIXOS_OZONE_WL = "1";
