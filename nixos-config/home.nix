@@ -1,6 +1,7 @@
 { config, pkgs, pkgs-unstable, ... }: 
+
 {
-  # TODO please change the username & home directory to your own
+
   home.username = "vic";
   home.homeDirectory = "/home/vic";
 
@@ -108,11 +109,22 @@
   programs.git = {
     enable = true;
     userName = "vic";
-    userEmail = "vic@nosesisaid.com";
+    userEmail = "74506415+v1ctorio@users.noreply.github.com";
     extraConfig = {
       init.defaultBranch = "main";
+      user.signingkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHiABfvVgGSLziAbM4AWVdkYTi0OzxCrt8P+VbMfZHEe";
+      gpg.format = "ssh";
     };
   };
+
+  programs.ssh = {
+    enable = true;
+    extraConfig = ''
+      Host *
+          IdentityAgent ~/.1password/agent.sock
+    '';
+  };
+
 
   # starship - an customizable prompt for any shell
   programs.starship = {
@@ -176,7 +188,9 @@
       size = 11;
     };
   };
-  
+
+
+
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage

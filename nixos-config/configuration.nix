@@ -254,6 +254,8 @@ nixpkgs.config.allowUnfree = true;
     interactiveShellInit = ''
       export PATH=~/.npm-packages/bin:$PATH
       export NODE_PATH=~/.npm-packages/lib/node_modules
+      export PATH=~/.yarn/bin:$PATH
+      export PATH=~/.npm-global/bin:$PATH
 
         if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]
       then

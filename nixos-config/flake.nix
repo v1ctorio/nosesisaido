@@ -16,8 +16,7 @@
 
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ... }@inputs: {
-    # Please replace my-nixos with your hostname
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager,  ... }@inputs: {
     nixosConfigurations.nosesisaid = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };
