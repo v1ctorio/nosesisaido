@@ -46,6 +46,10 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
+  # Test pantheon // no I using gnome (((
+  #services.xserver.desktopManager.pantheon.enable = true;
+  #services.pantheon.apps.enable = false;
+
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
@@ -256,6 +260,8 @@ nixpkgs.config.allowUnfree = true;
       export NODE_PATH=~/.npm-packages/lib/node_modules
       export PATH=~/.yarn/bin:$PATH
       export PATH=~/.npm-global/bin:$PATH
+      export PATH=~/.cargo/bin:$PATH
+      export PATH=~/go/bin:$PATH
 
     if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]
     then
@@ -298,6 +304,10 @@ nixpkgs.config.allowUnfree = true;
   };
   
   nix.settings.auto-optimise-store = true;
+
+
+  # Potentially enable Pro Controller support (?)
+  hardware.steam-hardware.enable = true;
 
 
 

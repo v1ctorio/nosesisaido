@@ -42,7 +42,10 @@
     mpc-cli
     pkgs-unstable.audio-sharing
     gnome-solanum
+    
+    # Emulation
     ryujinx
+    cemu
 
     anki-bin
 
