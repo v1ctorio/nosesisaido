@@ -139,6 +139,8 @@ nixpkgs.config.allowUnfree = true;
 
     keybase-gui
     wl-clipboard
+
+    sbctl
   ];
 
     services.kbfs = {

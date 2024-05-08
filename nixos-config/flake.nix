@@ -14,9 +14,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote/v0.3.0";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager,  ... }@inputs: {
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, lanzaboote,  ... }@inputs: {
     nixosConfigurations.nosesisaid = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };
@@ -24,6 +29,7 @@
         # Import the previous configuration.nix we used,
         # so the old configuration file still takes effect
         ./configuration.nix
+        ./nosesisaid/secureboot.nix
       home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
