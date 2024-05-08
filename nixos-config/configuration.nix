@@ -138,7 +138,7 @@ nixpkgs.config.allowUnfree = true;
     ffmpeg
 
     keybase-gui
-
+    wl-clipboard
   ];
 
     services.kbfs = {
@@ -312,5 +312,7 @@ nixpkgs.config.allowUnfree = true;
 
 
 #  environment.sessionVariables.NIXOS_OZONE_WL = "1";
-#
+
+  programs.gamemode.enable = true;
+
 }

@@ -92,6 +92,9 @@
     ethtool
     pciutils # lspci
     usbutils # lsusb
+
+    # tweaks
+    spicetify-cli # Spotify customizer
   ];
 
   # basic configuration of git, please change to your own
