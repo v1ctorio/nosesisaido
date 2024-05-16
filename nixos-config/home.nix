@@ -53,6 +53,7 @@
 
 
     neofetch
+    bat
     nnn # terminal file manager
 
     # archives

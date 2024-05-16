@@ -114,7 +114,7 @@ nixpkgs.config.allowUnfree = true;
     hyprpaper
     mpvpaper
     swww
-    swaynotificationcenter
+    dunst #swaynotificationcenter
     waybar
     font-awesome
     wofi
