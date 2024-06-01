@@ -1,6 +1,9 @@
-{ config, pkgs, pkgs-unstable, ... }: 
-
+{ config, pkgs, pkgs-unstable, inputs, ... }: 
+let
+  spicePkgs = inputs.spicetify-nix.packages.${pkgs.system}.default;
+in
 {
+  imports = [ inputs.spicetify-nix.homeManagerModule ];
 
   home.username = "vic";
   home.homeDirectory = "/home/vic";
@@ -25,6 +28,7 @@
   home.packages = with pkgs; [
 
     firefox
+    ungoogled-chromium
     thunderbird
     vscode
 
@@ -37,6 +41,7 @@
     pkgs-unstable.obsidian
     pkgs-unstable.vivaldi
     pkgs-unstable.whatsapp-for-linux
+    pkgs-unstable.gnome.gnome-sound-recorder
 
     nwg-look
     mpc-cli
@@ -67,7 +72,7 @@
     yq-go # yaml processor https://github.com/mikefarah/yq
     eza # A modern replacement for ‘ls’
     fzf # A command-line fuzzy finder
-    gh # GitHub CLI
+    pkgs-unstable.gh # GitHub CLI
 
     # networking tools
     mtr # A network diagnostic tool
@@ -95,7 +100,6 @@
     usbutils # lsusb
 
     # tweaks
-    spicetify-cli # Spotify customizer
   ];
 
   # basic configuration of git, please change to your own
@@ -192,6 +196,21 @@
   };
 
 
+
+  programs.spicetify =
+    {
+      enable = true;
+      theme = spicePkgs.themes.catppuccin;
+      colorScheme = "mocha";
+
+      enabledExtensions = with spicePkgs.extensions; [
+        fullAppDisplay
+        shuffle # shuffle+ (special characters are sanitized out of ext names)
+        hidePodcasts
+        keyboardShortcut
+        adblock
+      ];
+    };
 
 
   # This value determines the home Manager release that your

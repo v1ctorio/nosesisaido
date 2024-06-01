@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, pkgs-unstable, pkgs-stable,... }:
 
 {
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -31,6 +31,8 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
+
+  i18n.supportedLocales = [ "en_US.UTF-8/UTF-8" "es_ES.UTF-8/UTF-8" ];
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "es_ES.UTF-8";
     LC_IDENTIFICATION = "es_ES.UTF-8";
@@ -52,13 +54,14 @@
 
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gdm.wayland = true;
   services.xserver.desktopManager.gnome.enable = true;
 
   security.polkit.enable = true;
     # Configure keymap in X11
     services.xserver = {
-      layout = "us";
-      xkbVariant = "";
+      xkb.layout = "us";
+      xkb.variant = "";
     };
 
   # Enable CUPS to print documents.
@@ -133,7 +136,7 @@ nixpkgs.config.allowUnfree = true;
     #wineWowPackages.waylandFull
     android-tools
     mpv
-    nodejs_21
+    nodejs_22
     pcscliteWithPolkit
     ffmpeg
 
@@ -141,6 +144,11 @@ nixpkgs.config.allowUnfree = true;
     wl-clipboard
 
     sbctl
+
+    hunspell
+    nuspell
+    hunspellDicts.en_US
+    hunspellDicts.es_ES
   ];
 
     services.kbfs = {
@@ -166,8 +174,8 @@ nixpkgs.config.allowUnfree = true;
   # services.openssh.enable = true;
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 8554 ];
-  networking.firewall.allowedUDPPorts = [ 8554 ];
+  networking.firewall.allowedTCPPorts = [ 8554 25565];
+  networking.firewall.allowedUDPPorts = [ 8554 25565];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
@@ -247,13 +255,25 @@ nixpkgs.config.allowUnfree = true;
 
   programs.adb.enable = true;
 
-  programs._1password.enable = true;
+  programs._1password = {
+    enable = true;
+    package = pkgs-stable._1password;
+  };
   programs._1password-gui = {
-    package = pkgs._1password-gui-beta;
+    package = pkgs-stable._1password-gui-beta;
     enable = true;
     # Certain features, including CLI integration and system authentication support,
     # require enabling PolKit integration on some desktop environments (e.g. Plasma).
     polkitPolicyOwners = [ "vic" ];
+  };
+  environment.etc = {
+    "1passowrd/custom_allowed_browsers" = {
+      text = ''
+      firefox
+      vivaldi
+      '';
+      mode = "0755";
+    };
   };
 
   programs.bash = {
