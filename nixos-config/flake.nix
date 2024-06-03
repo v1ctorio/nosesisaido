@@ -21,10 +21,10 @@
       url = "github:nix-community/lanzaboote/v0.3.0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
+    webx.url = "github:face-hh/webx";
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, lanzaboote,  ... }@inputs: {
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, lanzaboote, webx,  ... }@inputs: {
     nixosConfigurations.nosesisaid = nixpkgs.lib.nixosSystem rec {
       system = "x86_64-linux";
       specialArgs = { 

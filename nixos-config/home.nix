@@ -32,6 +32,7 @@ in
     thunderbird
     vscode
 
+    armcord
     telegram-desktop
     kooha
     wf-recorder
@@ -51,7 +52,7 @@ in
     # Emulation
     ryujinx
     cemu
-
+osu-lazer-bin
     anki-bin
 
 

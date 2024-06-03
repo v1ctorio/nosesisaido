@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, inputs, pkgs-unstable, pkgs-stable,... }:
+{ config, pkgs, inputs, pkgs-unstable, pkgs-stable, ... }:
 
 {
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -11,6 +11,9 @@
       ./hardware-configuration.nix
     ];
 
+  nixpkgs.overlays = [
+    inputs.webx.overlays.x86_64-linux.default
+  ];
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -54,7 +57,6 @@
 
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gdm.wayland = true;
   services.xserver.desktopManager.gnome.enable = true;
 
   security.polkit.enable = true;
@@ -149,6 +151,9 @@ nixpkgs.config.allowUnfree = true;
     nuspell
     hunspellDicts.en_US
     hunspellDicts.es_ES
+
+    webx
+    godot_4
   ];
 
     services.kbfs = {
@@ -336,5 +341,7 @@ nixpkgs.config.allowUnfree = true;
 #  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   programs.gamemode.enable = true;
+
+
 
 }
