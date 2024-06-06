@@ -159,7 +159,14 @@ osu-lazer-bin
       selection.save_to_clipboard = true;
     };
   };
-
+  programs = {
+    direnv = {
+      enable = true;
+      enableBashIntegration = true; # see note on other shells below
+      nix-direnv.enable = true;
+    };
+    bash.enable = true; 
+  };
   programs.fish = {
     enable = true;
     functions = {
