@@ -29,13 +29,11 @@ in
 
     firefox
     ungoogled-chromium
-    thunderbird
     vscode
 
     armcord
     telegram-desktop
     kooha
-    wf-recorder
     pkgs-unstable.prismlauncher
     pkgs-unstable.bottles
     yubioath-flutter
@@ -200,7 +198,7 @@ osu-lazer-bin
       name = "Sans";
       size = 11;
     };
-  };
+	  };
 
 
 

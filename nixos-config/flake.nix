@@ -1,5 +1,5 @@
 {
-  description = "A simple NixOS flake";
+  description = "vic's nixos configuration";
 
   inputs = {
     # NixOS official package source, using the nixos-23.11 branch here
@@ -46,6 +46,7 @@
         # Import the previous configuration.nix we used,
         # so the old configuration file still takes effect
         ./configuration.nix
+	./nosesisaid/dedicated.nix
         ./nosesisaid/secureboot.nix
       home-manager.nixosModules.home-manager
           {
@@ -65,6 +66,45 @@
             };
           }
       ];
-    };
   };
+  nixosConfigurations.alum = nixpkgs.lib.nixosSystem rec {
+	system = "x86_64-linux";
+	specialArgs = {
+	pkgs-stable = import nixpkgs { 
+          inherit system;
+          config = { allowUnfree = true; };
+        };
+        pkgs-unstable = import nixpkgs-unstable { 
+          inherit system;
+          config = { allowUnfree = true; };
+        };
+
+        inherit inputs;
+
+        };
+	modules = [
+
+	./configuration.nix
+	./alum/dedicated.nix
+	 home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+
+            home-manager.users.vic = import ./home.nix;
+
+            # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
+            home-manager.extraSpecialArgs = { 
+              pkgs-unstable = import nixpkgs-unstable { 
+                  #inherit system;
+                  system = "x86_64-linux";
+                  config = { allowUnfree = true; };
+		};
+                inherit inputs;
+            };
+          }
+
+	];
+	};
+    };
 }
