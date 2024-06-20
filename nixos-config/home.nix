@@ -32,7 +32,7 @@ in
     thunderbird
     vscode
 
-    armcord
+    pkgs-unstable.armcord
     telegram-desktop
     kooha
     wf-recorder
@@ -189,6 +189,7 @@ osu-lazer-bin
     enable = true;
     theme = {
       name = "Adwaita";
+
     };
 
     iconTheme = {

@@ -59,6 +59,7 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
+
   security.polkit.enable = true;
     # Configure keymap in X11
     services.xserver = {
@@ -154,6 +155,10 @@ nixpkgs.config.allowUnfree = true;
 
     webx
     godot_4
+
+    (pkgs.catppuccin-sddm.override {
+      flavor = "mocha";
+     })
   ];
 
     services.kbfs = {
@@ -342,6 +347,6 @@ nixpkgs.config.allowUnfree = true;
 
   programs.gamemode.enable = true;
 
-
+  programs.firejail.enable = true;
 
 }
