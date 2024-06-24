@@ -31,6 +31,7 @@
 
   environment.systemPackages = with pkgs; [
     jdk17
+    jdk21
     android-tools
     pcscliteWithPolkit
     ffmpeg
@@ -85,7 +86,7 @@
   system.stateVersion = "23.11"; # Did you read the comment?
 
 
-
+systemd = {
 
  user.services = {
     keybase.serviceConfig.Slice = "keybase.slice";
@@ -105,9 +106,8 @@
         Slice      = "keybase.slice";
       };
     };
- };
   };
-
+};
   security.pam.services.gdm.enableGnomeKeyring = true;
   # Eneable NTFS support
   boot.supportedFilesystems = [ "ntfs" ];
