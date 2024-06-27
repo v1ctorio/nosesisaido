@@ -78,7 +78,7 @@
   users.users.vic = {
     isNormalUser = true;
     description = "Victorio";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
 
   };
 
