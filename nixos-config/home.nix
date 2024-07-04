@@ -50,9 +50,9 @@ in
     # Emulation
     ryujinx
     cemu
-osu-lazer-bin
+    osu-lazer-bin
     anki-bin
-
+    katawa-shoujo-re-engineered
 
 
 

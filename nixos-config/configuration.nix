@@ -127,6 +127,8 @@ nixpkgs.config.allowUnfree = true;
     nuspell
     hunspellDicts.en_US
     hunspellDicts.es_ES
+
+    libgcc
   ];
 
 
