@@ -189,17 +189,6 @@ nixpkgs.config.allowUnfree = true;
 
   programs.adb.enable = true;
 
-  programs._1password = {
-    enable = true;
-    package = pkgs-stable._1password;
-  };
-  programs._1password-gui = {
-    package = pkgs-stable._1password-gui-beta;
-    enable = true;
-    # Certain features, including CLI integration and system authentication support,
-    # require enabling PolKit integration on some desktop environments (e.g. Plasma).
-    polkitPolicyOwners = [ "vic" ];
-  };
   environment.etc = {
     "1passowrd/custom_allowed_browsers" = {
       text = ''

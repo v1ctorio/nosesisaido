@@ -108,7 +108,6 @@ osu-lazer-bin
     userEmail = "74506415+v1ctorio@users.noreply.github.com";
     extraConfig = {
       init.defaultBranch = "main";
-      user.signingkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHiABfvVgGSLziAbM4AWVdkYTi0OzxCrt8P+VbMfZHEe";
       gpg.format = "ssh";
       core.editor = "code --wait";
     };
@@ -116,10 +115,6 @@ osu-lazer-bin
 
   programs.ssh = {
     enable = true;
-    extraConfig = ''
-      Host *
-          IdentityAgent ~/.1password/agent.sock
-    '';
   };
 
   programs.kitty = {
