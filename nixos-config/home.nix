@@ -110,7 +110,7 @@ in
       init.defaultBranch = "main";
       user.signingkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHiABfvVgGSLziAbM4AWVdkYTi0OzxCrt8P+VbMfZHEe";
       gpg.format = "ssh";
-      core.editor = "code --wait";
+      core.editor = "nvim";
     };
   };
 

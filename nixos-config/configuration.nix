@@ -38,7 +38,6 @@
 
 
   # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
 
@@ -127,8 +126,7 @@ nixpkgs.config.allowUnfree = true;
     nuspell
     hunspellDicts.en_US
     hunspellDicts.es_ES
-
-    libgcc
+    gcc
   ];
 
 
@@ -169,6 +167,8 @@ nixpkgs.config.allowUnfree = true;
 
   # Enable hyprland
   programs.hyprland.enable = true;
+  programs.hyprlock.enable = true;
+  services.xserver.windowManager.hypr.enable = true;
 
   services.gnome = { 
     gnome-keyring.enable = true;

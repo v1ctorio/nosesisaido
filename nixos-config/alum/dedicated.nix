@@ -9,6 +9,7 @@
 
   environment.systemPackages = with pkgs; [
     jdk21
+    brightnessctl
   ];
 
   nix.gc = {
