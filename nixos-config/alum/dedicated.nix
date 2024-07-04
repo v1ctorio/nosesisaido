@@ -7,6 +7,11 @@
 	    ];
   networking.hostName = "alum";
 
+  environment.systemPackages = with pkgs; [
+    jdk21
+    brightnessctl
+  ];
+
   nix.gc = {
     automatic = true;
     dates = "daily";

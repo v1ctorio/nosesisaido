@@ -50,9 +50,9 @@ in
     # Emulation
     ryujinx
     cemu
-osu-lazer-bin
+    osu-lazer-bin
     anki-bin
-
+    katawa-shoujo-re-engineered
 
 
 
@@ -109,7 +109,7 @@ osu-lazer-bin
     extraConfig = {
       init.defaultBranch = "main";
       gpg.format = "ssh";
-      core.editor = "code --wait";
+      core.editor = "nvim";
     };
   };
 
