@@ -103,6 +103,7 @@ nixpkgs.config.allowUnfree = true;
     waybar
     font-awesome
     wofi
+    wlogout
     xdg-desktop-portal-hyprland
     grim
     slurp
