@@ -98,7 +98,9 @@ in
     pciutils # lspci
     usbutils # lsusb
 
-    # tweaks
+    webcord
+    dissent
+    fractal
   ];
 
   # basic configuration of git, please change to your own

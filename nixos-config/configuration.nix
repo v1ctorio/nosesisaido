@@ -143,6 +143,8 @@ nixpkgs.config.allowUnfree = true;
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
 
+  # Login manager/Display manager
+  services.xserver.displayManager.gdm.enable = true;
 
 
 
@@ -168,7 +170,8 @@ nixpkgs.config.allowUnfree = true;
   # Enable hyprland
   programs.hyprland.enable = true;
   programs.hyprlock.enable = true;
-  services.xserver.windowManager.hypr.enable = true;
+  services.hypridle.enable = true;
+  
 
   services.gnome = { 
     gnome-keyring.enable = true;
