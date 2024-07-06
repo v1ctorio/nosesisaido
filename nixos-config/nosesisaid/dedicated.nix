@@ -35,9 +35,6 @@
     android-tools
     pcscliteWithPolkit
     ffmpeg
-
-    keybase-gui
-
     sbctl
 
     hunspell
@@ -86,28 +83,6 @@
   system.stateVersion = "23.11"; # Did you read the comment?
 
 
-systemd = {
-
- user.services = {
-    keybase.serviceConfig.Slice = "keybase.slice";
-
-    kbfs = {
-      environment = { KEYBASE_RUN_MODE = "prod"; };
-      serviceConfig.Slice = "keybase.slice";
-    };
-
-    keybase-gui = {
-      description = "Keybase GUI";
-      requires = [ "keybase.service" "kbfs.service" ];
-      after    = [ "keybase.service" "kbfs.service" ];
-      serviceConfig = {
-        ExecStart  = "${pkgs.keybase-gui}/share/keybase/Keybase";
-        PrivateTmp = true;
-        Slice      = "keybase.slice";
-      };
-    };
-  };
-};
   security.pam.services.gdm.enableGnomeKeyring = true;
   # Eneable NTFS support
   boot.supportedFilesystems = [ "ntfs" ];
