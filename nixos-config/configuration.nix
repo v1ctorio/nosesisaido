@@ -128,6 +128,12 @@ nixpkgs.config.allowUnfree = true;
     hunspellDicts.en_US
     hunspellDicts.es_ES
     gcc
+
+    cargo
+    rustfmt
+    rustc
+
+    nixd
   ];
 
 
