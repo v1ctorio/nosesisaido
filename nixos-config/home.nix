@@ -30,6 +30,7 @@ in
     firefox
     ungoogled-chromium
     vscode
+    zed-editor
 
     pkgs-unstable.armcord
     telegram-desktop
@@ -101,6 +102,8 @@ in
     webcord
     dissent
     fractal
+
+    nh
   ];
 
   # basic configuration of git, please change to your own

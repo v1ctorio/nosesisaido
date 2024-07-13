@@ -130,6 +130,12 @@ nixpkgs.config.allowUnfree = true;
     gcc
     
     restic
+
+    cargo
+    rustfmt
+    rustc
+
+    nixd
   ];
 
 
