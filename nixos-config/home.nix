@@ -51,7 +51,7 @@ in
     # Emulation
     ryujinx
     cemu
-    osu-lazer-bin
+    pkgs-unstable.osu-lazer-bin
     anki-bin
     katawa-shoujo-re-engineered
 
