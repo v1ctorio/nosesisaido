@@ -132,6 +132,7 @@ nixpkgs.config.allowUnfree = true;
     restic
 
     cargo
+    rust-analyzer
     rustfmt
     rustc
 
@@ -244,6 +245,9 @@ nixpkgs.config.allowUnfree = true;
   
   nix.settings.auto-optimise-store = true;
 
-
+  hardware.opentabletdriver = {
+    enable = true;
+    daemon.enable = true;
+  };
 
 }

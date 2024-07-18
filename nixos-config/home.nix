@@ -30,7 +30,7 @@ in
     firefox
     ungoogled-chromium
     vscode
-    zed-editor
+    pkgs-unstable.zed-editor
 
     pkgs-unstable.armcord
     telegram-desktop
