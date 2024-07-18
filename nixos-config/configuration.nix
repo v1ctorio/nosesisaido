@@ -222,6 +222,8 @@ nixpkgs.config.allowUnfree = true;
       export PATH=~/.npm-global/bin:$PATH
       export PATH=~/.cargo/bin:$PATH
       export PATH=~/go/bin:$PATH
+      export TERM=kitty
+
 
     if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]
     then
