@@ -10,9 +10,6 @@
       ./hardware-configuration.nix
     ];
 
-  nixpkgs.overlays = [
-    inputs.webx.overlays.x86_64-linux.default
-  ];
 
   networking.hostName = "nosesisaid"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -42,7 +39,6 @@
     hunspellDicts.en_US
     hunspellDicts.es_ES
 
-    webx
     godot_4
   ];
 

@@ -18,13 +18,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     lanzaboote = {
-      url = "github:nix-community/lanzaboote/v0.3.0";
+      url = "github:nix-community/lanzaboote/v0.4.1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    webx.url = "github:face-hh/webx";
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, lanzaboote, webx,  ... }@inputs: {
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, lanzaboote, ... }@inputs: {
     nixosConfigurations.nosesisaid = nixpkgs.lib.nixosSystem rec {
       system = "x86_64-linux";
       specialArgs = { 
@@ -99,12 +98,12 @@
                   #inherit system;
                   system = "x86_64-linux";
                   config = { allowUnfree = true; };
-		};
-                inherit inputs;
+		          };
+              inherit inputs;
             };
           }
 
-	];
-	};
+	          ];
+	      };
     };
 }
