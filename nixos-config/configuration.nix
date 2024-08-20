@@ -157,7 +157,17 @@ nixpkgs.config.allowUnfree = true;
   services.xserver.displayManager.gdm.enable = true;
 
 
-
+  programs._1password = {
+    enable = true;
+    package = pkgs-stable._1password;
+  };
+  programs._1password-gui = {
+    package = pkgs-stable._1password-gui;
+    enable = true;
+    # Certain features, including CLI integration and system authentication support,
+    # require enabling PolKit integration on some desktop environments (e.g. Plasma).
+    polkitPolicyOwners = [ "vic" ];
+  };
 
   systemd = {
   user.services.polkit-gnome-authentication-agent-1 = {
@@ -243,9 +253,10 @@ nixpkgs.config.allowUnfree = true;
   services.gvfs.enable = true;
   services.udisks2.enable = true;
 
+  
+  services.pcscd.enable = true;
 
   
-  nix.settings.auto-optimise-store = true;
 
 
 }

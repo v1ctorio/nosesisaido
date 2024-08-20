@@ -3,7 +3,7 @@ let
   spicePkgs = inputs.spicetify-nix.packages.${pkgs.system}.default;
 in
 {
-  imports = [ inputs.spicetify-nix.homeManagerModule ];
+  #imports = [ inputs.spicetify-nix.homeManagerModule ];
 
   home.username = "vic";
   home.homeDirectory = "/home/vic";
@@ -49,10 +49,10 @@ in
     gnome-solanum
     
     # Emulation
-    ryujinx
-    cemu
+    #ryujinx
+    #cemu
     pkgs-unstable.osu-lazer-bin
-    anki-bin
+    #anki-bin
     katawa-shoujo-re-engineered
 
 
@@ -106,6 +106,12 @@ in
     nh
 
    brave
+
+   helix-gpt
+   helix
+   termius
+   antares
+   slack
   ];
 
   # basic configuration of git, please change to your own
@@ -204,7 +210,7 @@ in
 	  };
 
 
-
+/*
   programs.spicetify =
     {
       enable = true;
@@ -219,7 +225,7 @@ in
         adblock
       ];
     };
-
+*/ 
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage

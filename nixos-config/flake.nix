@@ -46,7 +46,7 @@
         # so the old configuration file still takes effect
         ./configuration.nix
 	./nosesisaid/dedicated.nix
-        ./nosesisaid/secureboot.nix
+       # ./nosesisaid/secureboot.nix
       home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
