@@ -112,9 +112,12 @@ in
    termius
    antares
    slack
+   pkgs-unstable.notion-app-enhanced
+
+   youtube-music
   ];
 
-  # basic configuration of git, please change to your own
+ # basic configuration of git, please change to your own
   programs.git = {
     enable = true;
     userName = "vic";

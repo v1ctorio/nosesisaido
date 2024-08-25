@@ -131,10 +131,10 @@ nixpkgs.config.allowUnfree = true;
     
     restic
 
-    cargo
-    rust-analyzer
-    rustfmt
-    rustc
+    pkgs-unstable.cargo
+    pkgs-unstable.rust-analyzer
+    pkgs-unstable.rustfmt
+    pkgs-unstable.rustc
 
     nixd
   ];
