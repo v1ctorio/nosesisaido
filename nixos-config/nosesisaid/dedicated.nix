@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ../modules/gaming.nix
     ];
 
 
@@ -65,10 +66,10 @@
   # services.openssh.enable = true;
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 8554 25565];
-  networking.firewall.allowedUDPPorts = [ 8554 25565];
+  #networking.firewall.allowedTCPPorts = [ 8554 25565];
+  #inetworking.firewall.allowedUDPPorts = [ 8554 25565];
   # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+   networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
@@ -90,14 +91,6 @@
 
   services.hardware.openrgb.enable = true;
 
-  programs.steam = {
-    enable = true;
-    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-
-    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-  };
-
-
   boot.loader.systemd-boot.configurationLimit = 7;
 
   nix.gc = {
@@ -107,10 +100,6 @@
   };
   
   nix.settings.auto-optimise-store = true;
-
-
-  # Potentially enable Pro Controller support (?)
-  hardware.steam-hardware.enable = true;
 
 
 

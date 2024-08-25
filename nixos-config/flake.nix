@@ -17,13 +17,14 @@
       url = "github:the-argus/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    lanzaboote = {
-      url = "github:nix-community/lanzaboote/v0.4.1";
+    anyrun = {
+      url = "github:anyrun-org/anyrun";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, lanzaboote, ... }@inputs: {
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, anyrun, ... }@inputs: {
     nixosConfigurations.nosesisaid = nixpkgs.lib.nixosSystem rec {
       system = "x86_64-linux";
       specialArgs = { 

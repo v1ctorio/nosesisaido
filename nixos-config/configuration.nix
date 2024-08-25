@@ -5,8 +5,19 @@
 { config, pkgs, inputs, pkgs-unstable, pkgs-stable, ... }:
 
 {
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings = {
+    experimental-features = [ "nix-command" "flakes" ];
+    builders-use-substitutes = true;
+    # extra substituters to add
+    extra-substituters = [
+        "https://anyrun.cachix.org"
+    ];
 
+    extra-trusted-public-keys = [
+        "anyrun.cachix.org-1:pqBobmOjI7nKlsUMV25u9QHa9btJK65/C8vnO3p346s="
+    ];
+
+  };
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -137,6 +148,9 @@ nixpkgs.config.allowUnfree = true;
     pkgs-unstable.rustc
 
     nixd
+
+    #inputs.anyrun.packages.${system}.anyrun-with-all-plugins
+    tofi
   ];
 
 
