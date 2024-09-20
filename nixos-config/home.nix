@@ -49,7 +49,7 @@ in
     gnome-solanum
     
     # Emulation
-    #ryujinx
+    ryujinx
     #cemu
     pkgs-unstable.osu-lazer-bin
     #anki-bin
@@ -104,6 +104,7 @@ in
     fractal
 
     nh
+    comma
 
    brave
 
@@ -116,6 +117,9 @@ in
 
    youtube-music
 
+
+  # absolute crap
+  zoom-us
   
   ];
 

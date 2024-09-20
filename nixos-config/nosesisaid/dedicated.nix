@@ -43,14 +43,14 @@
     godot_4
   ];
 
-    services.kbfs = {
-      enable = true;
-      mountPoint = "%t/kbfs";
-      extraFlags = [ "-label %u" ];
+    #services.kbfs = {
+   #   enable = true;
+  #    mountPoint = "%t/kbfs";
+ #     extraFlags = [ "-label %u" ];
+#
+ #     };
 
-      };
-
-    services.keybase.enable = true;
+#    services.keybase.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -89,7 +89,6 @@
 
   virtualisation.docker.enable = true;
 
-  services.hardware.openrgb.enable = true;
 
   boot.loader.systemd-boot.configurationLimit = 7;
 
@@ -108,5 +107,7 @@
   programs.gamemode.enable = true;
 
 
+  # adguard home 
+  # this not working networking.nameservers = [ "192.168.1.155" "1.1.1.1" ];
 
 }
