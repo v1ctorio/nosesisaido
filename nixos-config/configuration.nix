@@ -128,7 +128,7 @@ nixpkgs.config.allowUnfree = true;
     alsa-utils
     mpv
     nodejs_22
-    ffmpeg
+    ffmpeg-full
 
     wl-clipboard
 
