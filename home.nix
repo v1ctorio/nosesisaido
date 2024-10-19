@@ -39,25 +39,19 @@ in
     pkgs-unstable.zed-editor
 
     pkgs-unstable.armcord
-    telegram-desktop
     kooha
     pkgs-unstable.prismlauncher
     pkgs-unstable.bottles
     yubioath-flutter
     pkgs-unstable.obsidian
     pkgs-unstable.vivaldi
-    pkgs-unstable.whatsapp-for-linux
     pkgs-unstable.gnome-sound-recorder
 
-    nwg-look
     mpc-cli
-    pkgs-unstable.audio-sharing
     gnome-solanum
     
     # Emulation
-    ryujinx
     #cemu
-    pkgs-unstable.osu-lazer-bin
     #anki-bin
     katawa-shoujo-re-engineered
 
@@ -104,10 +98,6 @@ in
     ethtool
     pciutils # lspci
     usbutils # lsusb
-
-    webcord
-    dissent
-    fractal
 
     nh
     comma

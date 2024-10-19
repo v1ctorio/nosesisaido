@@ -53,7 +53,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
 
-            home-manager.users.vic = import ./home.nix;
+            home-manager.users.vic = import ./nosesisaid/home.nix;
 
             # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
             home-manager.extraSpecialArgs = { 
@@ -91,7 +91,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
 
-            home-manager.users.vic = import ./home.nix;
+            home-manager.users.vic = import ./alum/home.nix;
 
             # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
             home-manager.extraSpecialArgs = { 
