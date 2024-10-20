@@ -2,5 +2,6 @@
 {
   imports = [ 
     ../home.nix
+    ../modules/sway/sway.nix
     ];
 }

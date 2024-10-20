@@ -93,7 +93,7 @@
   users.users.vic = {
     isNormalUser = true;
     description = "Victorio";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "video" ];
 
   };
 
@@ -198,7 +198,8 @@ nixpkgs.config.allowUnfree = true;
   programs.hyprland.enable = true;
   programs.hyprlock.enable = true;
   services.hypridle.enable = true;
-  
+
+  programs.light.enable = true;
 
   services.gnome = { 
     gnome-keyring.enable = true;

@@ -37,7 +37,7 @@ in
     vscode
     pkgs-unstable.zed-editor
 
-    pkgs-unstable.armcord
+    pkgs-unstable.legcord
     kooha
     pkgs-unstable.prismlauncher
     pkgs-unstable.bottles
@@ -54,6 +54,7 @@ in
     #anki-bin
     #katawa-shoujo-re-engineered
 
+    palemoon-bin
 
 
     neofetch

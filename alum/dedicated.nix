@@ -12,6 +12,8 @@
     brightnessctl
   ];
 
+  programs.sway.enable = true;
+
   nix.gc = {
     automatic = true;
     dates = "weekly";
