@@ -1,6 +1,6 @@
 { config, home, pkgs, pkgs-unstable, inputs, ... }: 
 
 {
-  home.file.".config/Pictures/wallpapers".source = ./Images;
-  home.file.".config/Videos/wallpapers".source = ./Videos;
+  home.file."Pictures/wallpapers".source = ./Images;
+  home.file."Videos/wallpapers".source = ./Videos;
 }

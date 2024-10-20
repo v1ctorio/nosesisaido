@@ -33,7 +33,6 @@ in
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
 
-    firefox
     ungoogled-chromium
     vscode
     pkgs-unstable.zed-editor
@@ -53,7 +52,7 @@ in
     # Emulation
     #cemu
     #anki-bin
-    katawa-shoujo-re-engineered
+    #katawa-shoujo-re-engineered
 
 
 

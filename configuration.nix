@@ -5,6 +5,11 @@
 { config, pkgs, inputs, pkgs-unstable, pkgs-stable, ... }:
 
 {
+
+  imports = [
+    ./modules/firefox.nix
+  ];
+
   nix.settings = {
     experimental-features = [ "nix-command" "flakes" ];
     builders-use-substitutes = true;
@@ -161,7 +166,7 @@ nixpkgs.config.allowUnfree = true;
 
   programs._1password = {
     enable = true;
-    package = pkgs-stable._1password;
+    package = pkgs-unstable._1password;
   };
   programs._1password-gui = {
     package = pkgs-stable._1password-gui;
