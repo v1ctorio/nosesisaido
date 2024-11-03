@@ -21,10 +21,14 @@
       url = "github:anyrun-org/anyrun";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    lix-module = {
+      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.91.1-1.tar.gz";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, anyrun, ... }@inputs: {
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, anyrun, lix-module, ... }@inputs: {
     nixosConfigurations.nosesisaid = nixpkgs.lib.nixosSystem rec {
       system = "x86_64-linux";
       specialArgs = { 
@@ -47,6 +51,7 @@
         # so the old configuration file still takes effect
         ./configuration.nix
 	      ./nosesisaid/dedicated.nix
+        lix-module.nixosModules.default
        # ./nosesisaid/secureboot.nix
       home-manager.nixosModules.home-manager
           {

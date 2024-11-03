@@ -5,8 +5,7 @@
     ];
   home.packages = with pkgs-unstable; [
     
-    dissent
-    fractal
+    deno
     ryujinx
     osu-lazer-bin
     audio-sharing

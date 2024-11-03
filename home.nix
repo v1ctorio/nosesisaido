@@ -40,7 +40,6 @@ in
     pkgs-unstable.legcord
     kooha
     pkgs-unstable.prismlauncher
-    pkgs-unstable.bottles
     yubioath-flutter
     pkgs-unstable.obsidian
     pkgs-unstable.vivaldi
