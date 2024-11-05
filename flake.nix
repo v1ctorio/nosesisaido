@@ -13,6 +13,11 @@
       # to avoid problems caused by different versions of nixpkgs.
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    home-manager-unstable = {
+      url = "github:nix-community/home-manager/master";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+      
+    };
     spicetify-nix = {
       url = "github:the-argus/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -23,13 +28,13 @@
     };
     lix-module = {
       url = "https://git.lix.systems/lix-project/nixos-module/archive/2.91.1-1.tar.gz";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
     
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, anyrun, lix-module, ... }@inputs: {
-    nixosConfigurations.nosesisaid = nixpkgs.lib.nixosSystem rec {
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, home-manager-unstable, anyrun, lix-module, ... }@inputs: {
+    nixosConfigurations.nosesisaid = nixpkgs-unstable.lib.nixosSystem rec {
       system = "x86_64-linux";
       specialArgs = { 
 
@@ -53,7 +58,7 @@
 	      ./nosesisaid/dedicated.nix
         lix-module.nixosModules.default
        # ./nosesisaid/secureboot.nix
-      home-manager.nixosModules.home-manager
+      home-manager-unstable.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;

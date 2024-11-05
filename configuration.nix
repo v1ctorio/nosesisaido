@@ -66,7 +66,7 @@
 
 
   # Enable sound with pipewire.
-  sound.enable = true;
+  # disable sound.enable ?? sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -164,9 +164,9 @@ nixpkgs.config.allowUnfree = true;
   services.xserver.displayManager.gdm.enable = true;
 
 
-  programs._1password = {
+  programs._1password= {
     enable = true;
-    package = pkgs-unstable._1password;
+    package = pkgs-unstable._1password-cli;
   };
   programs._1password-gui = {
     package = pkgs-stable._1password-gui;
@@ -213,7 +213,7 @@ nixpkgs.config.allowUnfree = true;
 
   fonts.packages = with pkgs; [
   (nerdfonts.override { fonts = [ "FiraCode" "CascadiaCode" ]; })
-  noto-fonts-cjk
+  noto-fonts-cjk-sans
   ];
 
 

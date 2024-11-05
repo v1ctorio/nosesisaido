@@ -29,10 +29,10 @@
     
   };
 
-  hardware.opengl.extraPackages = with pkgs-stable; [
+  hardware.graphics.extraPackages = with pkgs-stable; [
     amdvlk
   ];
-  hardware.opengl.enable = true;
+  hardware.graphics.enable = true;
 
 
 }

@@ -40,7 +40,7 @@ in
     pkgs-unstable.legcord
     kooha
     pkgs-unstable.prismlauncher
-    yubioath-flutter
+    #TODO: make this work yubioath-flutter
     pkgs-unstable.obsidian
     pkgs-unstable.vivaldi
     pkgs-unstable.gnome-sound-recorder
@@ -202,7 +202,7 @@ in
     };
 
     iconTheme = {
-      package = pkgs.gnome.adwaita-icon-theme;
+      package = pkgs.adwaita-icon-theme;
       name = "Adwaita";
     };
 
