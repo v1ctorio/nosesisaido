@@ -22,6 +22,10 @@
     ];
   };
 
+  programs.steam = {
+    enable = true;
+  }; # for remote play 
+
   nix.gc = {
     automatic = true;
     dates = "weekly";
