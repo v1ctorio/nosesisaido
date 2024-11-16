@@ -77,7 +77,7 @@
           }
       ];
   };
-  nixosConfigurations.alum = nixpkgs.lib.nixosSystem rec {
+  nixosConfigurations.alum = nixpkgs-unstable.lib.nixosSystem rec {
 	system = "x86_64-linux";
 	specialArgs = {
 	pkgs-stable = import nixpkgs { 
@@ -96,7 +96,7 @@
 
 	./configuration.nix
 	./alum/dedicated.nix
-	 home-manager.nixosModules.home-manager
+	 home-manager-unstable.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;

@@ -104,7 +104,6 @@ in
    brave
 
    helix-gpt
-   helix
    termius
    antares
    slack
@@ -116,6 +115,14 @@ in
   zoom-us
   
   ];
+
+  programs.helix = {
+    enable = true;
+    defaultEditor = true;
+    settings = {
+      theme = "everforest_dark";
+    };
+  };
 
  # basic configuration of git, please change to your own
   programs.git = {

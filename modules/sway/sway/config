@@ -32,6 +32,7 @@ output DP-1 resolution 1920x1080@165Hz position 0,0
 input "type:keyboard" {
     xkb_layout us,es
     xkb_options grp:alt_shift_toggle
+    xkb_options "caps:swapescape"
 }
 
 input "type:touchpad" {
@@ -49,7 +50,7 @@ input "type:touchpad" {
     bindsym $mod+r exec $menu
     bindsym $mod+b exec $browser
     bindsym $mod+f fullscreen
-    bindsym $mod+Shift+f floating enable; fullscreen disable
+    bindsym $mod+Escape exec "pgrep -x yambar && pkill -x yambar || yambar"    
 
 # Moving around:
     bindsym $mod+Left focus left
@@ -93,7 +94,7 @@ input "type:touchpad" {
 
 # Window rules
     for_window [app_id="firefox"] blur disable
-    for_window [app_id="kitty"] opacity 0.8
+#    for_window [app_id="kitty"] opacity 0.8
     for_window [title="Picture-in-Picture"] floating enable, sticky enable
     for_window [app_id="io.github.seadve.Kooha"] sticky enable
     for_window [app_id="1Password"] floating enable
