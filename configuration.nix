@@ -161,7 +161,7 @@ nixpkgs.config.allowUnfree = true;
   # services.openssh.enable = true;
 
   # Login manager/Display manager
-  services.xserver.displayManager.gdm.enable = true;
+  services.displayManager.ly.enable = true;
 
 
   programs._1password= {
