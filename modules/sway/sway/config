@@ -31,7 +31,7 @@ output DP-1 resolution 1920x1080@165Hz position 0,0
 ### Input configuration
 input "type:keyboard" {
     xkb_layout us,es
-    xkb_options grp:alt_shift_toggle,"caps:swapescape"
+    xkb_options "grp:alt_shift_toggle,caps:swapescape"
 }
 
 input "type:touchpad" {
