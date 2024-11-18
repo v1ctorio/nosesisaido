@@ -48,6 +48,7 @@ in
     mpc-cli
     gnome-solanum
     
+    feishin
     # Emulation
     #cemu
     #anki-bin

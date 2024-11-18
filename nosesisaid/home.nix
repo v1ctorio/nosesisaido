@@ -4,7 +4,10 @@
     ../home.nix
     ];
   home.packages = with pkgs-unstable; [
+
+    rustup
     
+    jetbrains.rust-rover
     deno
     ryujinx
     osu-lazer-bin
