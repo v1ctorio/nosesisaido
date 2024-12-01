@@ -6,6 +6,8 @@
 
 {
 
+  nix.package = pkgs.lix;
+
   imports = [
     ./modules/firefox.nix
   ];
@@ -140,8 +142,6 @@ nixpkgs.config.allowUnfree = true;
     pkgs-unstable.rustfmt
     pkgs-unstable.rustc
 
-    nixd
-
     
   ];
 
@@ -211,7 +211,9 @@ nixpkgs.config.allowUnfree = true;
   services.flatpak.enable = true;
 
   fonts.packages = with pkgs; [
-  (nerdfonts.override { fonts = [ "FiraCode" "CascadiaCode" ]; })
+  nerd-fonts.fira-code
+  nerd-fonts.caskaydia-cove
+  nerd-fonts.lilex
   noto-fonts-cjk-sans
   ];
 

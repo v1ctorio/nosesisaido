@@ -29,7 +29,7 @@
 
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, home-manager-unstable, anyrun, lix-module, ... }@inputs: {
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, home-manager-unstable, lix-module, ... }@inputs: {
     nixosConfigurations.nosesisaid = nixpkgs-unstable.lib.nixosSystem rec {
       system = "x86_64-linux";
       specialArgs = { 
@@ -52,7 +52,7 @@
         # so the old configuration file still takes effect
         ./configuration.nix
 	      ./nosesisaid/dedicated.nix
-        lix-module.nixosModules.default
+       # lix-module.nixosModules.default sorry I need cache
        # ./nosesisaid/secureboot.nix
       home-manager-unstable.nixosModules.home-manager
           {
