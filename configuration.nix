@@ -93,10 +93,11 @@
   users.users.vic = {
     isNormalUser = true;
     description = "Victorio";
-    extraGroups = [ "networkmanager" "wheel" "docker" "video" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "video" "ydotool" ];
 
   };
 
+programs.ydotool.enable = true;
 
 # Allow unfree packages
 nixpkgs.config.allowUnfree = true;

@@ -9,7 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ../modules/gaming.nix
-      ../modules/virtualization/virtual.nix
+     # ../modules/virtualization/virtual.nix
     ];
 
 
@@ -88,7 +88,7 @@
 
 
 
-  virtualisation.docker.enable = true;
+  #virtualisation.docker.enable = true;
 
 
   boot.loader.systemd-boot.configurationLimit = 7;
