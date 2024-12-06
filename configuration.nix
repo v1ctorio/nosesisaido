@@ -205,6 +205,13 @@ nixpkgs.config.allowUnfree = true;
   };
   security.pam.services.login.enableGnomeKeyring = true;
 
+security.pam.yubico = {
+   enable = true;
+   debug = false;
+   mode = "challenge-response";
+   id = [ "22925810" ];# Yubi USB A
+};
+
 
 
 
