@@ -54,9 +54,8 @@ in
     #anki-bin
     #katawa-shoujo-re-engineered
 
-    palemoon-bin
-
-
+pika-backup
+    
     neofetch
     bat
     nnn # terminal file manager
@@ -114,6 +113,8 @@ in
 
   # absolute crap
   zoom-us
+
+  jrnl
   
   ];
 

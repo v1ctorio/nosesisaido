@@ -42,7 +42,8 @@
     hunspellDicts.es_ES
 
     godot_4
-  ];
+    inputs.zen-browser.packages."${system}".default
+    ];
 
     #services.kbfs = {
    #   enable = true;

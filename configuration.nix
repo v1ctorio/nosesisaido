@@ -102,7 +102,36 @@ programs.ydotool.enable = true;
 # Allow unfree packages
 nixpkgs.config.allowUnfree = true;
 
-
+  # Add Nosesisaid root CA
+  security.pki.certificates = [
+    ''
+    NSSID
+    =========
+      -----BEGIN CERTIFICATE-----
+MIID0TCCArmgAwIBAgIUAyr5VWp2Rnif5kvSqfNlsmMvu9cwDQYJKoZIhvcNAQEL
+BQAweDELMAkGA1UEBhMCRVMxDzANBgNVBAgMBk1hZHJpZDEPMA0GA1UEBwwGTWFk
+cmlkMRMwEQYDVQQKDApOb3Nlc2lzYWlkMQ4wDAYDVQQDDAVOU1NJRDEiMCAGCSqG
+SIb3DQEJARYTY2VydEBub3Nlc2lzYWlkLmNvbTAeFw0yNDEyMTUwNzQ0MzlaFw0y
+OTEyMTQwNzQ0MzlaMHgxCzAJBgNVBAYTAkVTMQ8wDQYDVQQIDAZNYWRyaWQxDzAN
+BgNVBAcMBk1hZHJpZDETMBEGA1UECgwKTm9zZXNpc2FpZDEOMAwGA1UEAwwFTlNT
+SUQxIjAgBgkqhkiG9w0BCQEWE2NlcnRAbm9zZXNpc2FpZC5jb20wggEiMA0GCSqG
+SIb3DQEBAQUAA4IBDwAwggEKAoIBAQCzGRgnptSvu2wWB4Ic/W1myyugRlteuX14
+XQ6ixv1vmqmbp5rh24vbzXqPfo5n1H6Em1ELaub8TRkhPzjOGM3FctIPNwtiRREE
+39735o6LyqG4G6Nfi1ybu4HtTk1Jyx5l6WRrx+yxqX4mzpdTqaGWMipFKoZSwZR8
+fyRGtzOnXrNw1nyjy8Pja3hdPrHlDG5XfRNtNuFafsa0KDuFd0v5CigFgqkbS/Kv
+Y4xJD6i5Y8EHX56l2cHbLlsc5+kgGA/8N6u4K6x9crnsOyxw0vce99T5/fnGK0B7
+RuOySfGkD0x1zaoiddjrXSO6waaDHZzBvdh7IZkyO1NKjcTvLDGXAgMBAAGjUzBR
+MB0GA1UdDgQWBBTvT+in85GCBNYSDdU1KH38xqGAPDAfBgNVHSMEGDAWgBTvT+in
+85GCBNYSDdU1KH38xqGAPDAPBgNVHRMBAf8EBTADAQH/MA0GCSqGSIb3DQEBCwUA
+A4IBAQBjIovW+PuW+KBI9O+DhvTr5nV5/QDiAjvDEVNpSFLkx8dvP5RFmaYnUZuK
+UZcAi5OHwg+X6updvZnUYSYYKFqkWi1K5PflZ6qa64bWy2mhcFiksBsXUhkUhR00
+OlimNwPvjfeLcK8qy7Pv1rU+dORYOmxqPFDZp1hD74gAvofGzRH61rOa6bRauapK
+TFfyr0UU7feY8sDjjs2PS+iACyP7Wegk5T0939IYOM+//pvQE08uopzuasGQwSxB
+Fki40Y0Psseum1o6KwGVwR6yDnX3fZBqNFDVok5sNnGnK4IvmJu370nstoMDiHCE
+p9fGSQgaH0TZi3lDRt9P3X9rN25d
+-----END CERTIFICATE-----
+    ''
+  ];
 
 
   # List packages installed in system profile. To search, run:
@@ -136,6 +165,7 @@ nixpkgs.config.allowUnfree = true;
     gcc
     
     restic
+    resticprofile
 
     pkgs-unstable.cargo
     pkgs-unstable.rust-analyzer
@@ -232,7 +262,8 @@ security.pam.yubico = {
       text = ''
       firefox
       vivaldi
-      '';
+      .zen-wrapped
+       '';
       mode = "0755";
     };
   };
