@@ -10,8 +10,9 @@ pkgs-stable.bottles
     rustup
     
     jetbrains.rust-rover
+    jetbrains.datagrip
     deno
-    ryujinx
+    pkgs-stable.ryujinx
     osu-lazer-bin
     audio-sharing
     telegram-desktop

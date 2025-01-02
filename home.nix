@@ -1,4 +1,4 @@
-{ config, pkgs, pkgs-unstable, inputs, ... }: 
+{ config, pkgs, pkgs-stable, pkgs-unstable, inputs, ... }: 
 let
   spicePkgs = inputs.spicetify-nix.packages.${pkgs.system}.default;
 in
@@ -31,7 +31,7 @@ in
 
 
   # Packages that should be installed to the user profile.
-  home.packages = with pkgs; [
+  home.packages = with pkgs-stable; [
 
     ungoogled-chromium
     vscode

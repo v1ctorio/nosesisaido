@@ -113,6 +113,12 @@
                   system = "x86_64-linux";
                   config = { allowUnfree = true; };
 		          };
+              
+              pkgs-stable = import nixpkgs { 
+                  #inherit system;
+                  system = "x86_64-linux";
+                  config = { allowUnfree = true; };
+		          };
               inherit inputs;
             };
           }
