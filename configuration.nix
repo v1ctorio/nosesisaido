@@ -166,7 +166,7 @@ p9fGSQgaH0TZi3lDRt9P3X9rN25d
     
     restic
     resticprofile
-
+playerctl
     pkgs-unstable.cargo
     pkgs-unstable.rust-analyzer
     pkgs-unstable.rustfmt
