@@ -115,7 +115,7 @@ pika-backup
   zoom-us
 
   jrnl
-  
+wayvnc  
   ];
 
   programs.helix = {
