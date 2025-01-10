@@ -1,3 +1,5 @@
+![Hackatime badge](https://waka.hackclub.com/api/badge/U072PTA5BNG/interval:any/nixos-config)
+
 My desktop dotflies, currently using NixOS with flakes.
 
 For my "rice" y use Hyprland, waybar, Kitty terminal, CaskaydiaCoveNerdFont and GTK apps.
