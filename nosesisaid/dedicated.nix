@@ -41,8 +41,11 @@
     hunspellDicts.en_US
     hunspellDicts.es_ES
 
+    pkgs-unstable.libdrm
+    
     godot_4
-  ];
+    inputs.zen-browser.packages."${system}".default
+    ];
 
     #services.kbfs = {
    #   enable = true;

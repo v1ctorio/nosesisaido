@@ -26,6 +26,7 @@
       url = "https://git.lix.systems/lix-project/nixos-module/archive/2.91.1-1.tar.gz";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
 
   };
 
@@ -67,8 +68,14 @@
                   #inherit system;
                   system = "x86_64-linux";
                   config = { allowUnfree = true; };
-                };
-                inherit inputs;
+              };
+
+              pkgs-stable = import nixpkgs {
+                system = "x86_64-linux";
+                config = { allowUnfree = true; };
+              };
+              
+              inherit inputs;
             };
           }
       ];
@@ -102,6 +109,12 @@
             # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
             home-manager.extraSpecialArgs = { 
               pkgs-unstable = import nixpkgs-unstable { 
+                  #inherit system;
+                  system = "x86_64-linux";
+                  config = { allowUnfree = true; };
+		          };
+              
+              pkgs-stable = import nixpkgs { 
                   #inherit system;
                   system = "x86_64-linux";
                   config = { allowUnfree = true; };

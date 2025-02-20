@@ -5,7 +5,7 @@
     // "width": 1280, // Waybar width
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
-    "modules-left": ["custom/powerm","hyprland/workspaces"],
+    "modules-left": ["custom/powerm","hyprland/workspaces", "mpris"],
     "modules-center": ["hyprland/window"],
     "modules-right": ["idle_inhibitor","pulseaudio", "network", "cpu", "battery","backlight", "temperature", "clock", "tray"],
     // Modules configuration
@@ -57,6 +57,18 @@
     },
     "memory": {
         "format": "{}% "
+    },
+    "mpris": {
+	"format": "DEFAULT: {player_icon} {dynamic}",
+	"format-paused": "DEFAULT: {status_icon} <i>{dynamic}</i>",
+	"player-icons": {
+		"default": "▶",
+		"mpv": "🎵"
+	},
+	"status-icons": {
+		"paused": "⏸"
+	},
+	// "ignored-players": ["firefox"]
     },
     "temperature": {
         // "thermal-zone": 2,

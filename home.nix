@@ -1,4 +1,4 @@
-{ config, pkgs, pkgs-unstable, inputs, ... }: 
+{ config, pkgs, pkgs-stable, pkgs-unstable, inputs, ... }: 
 let
   spicePkgs = inputs.spicetify-nix.packages.${pkgs.system}.default;
 in
@@ -31,7 +31,7 @@ in
 
 
   # Packages that should be installed to the user profile.
-  home.packages = with pkgs; [
+  home.packages = with pkgs-stable; [
 
     ungoogled-chromium
     vscode
@@ -54,9 +54,8 @@ in
     #anki-bin
     #katawa-shoujo-re-engineered
 
-    palemoon-bin
-
-
+pika-backup
+    
     neofetch
     bat
     nnn # terminal file manager
@@ -114,7 +113,9 @@ in
 
   # absolute crap
   zoom-us
-  
+
+  jrnl
+wayvnc  
   ];
 
   programs.helix = {
