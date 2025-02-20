@@ -245,6 +245,7 @@ security.pam.yubico = {
       export PATH=~/.npm-global/bin:$PATH
       export PATH=~/.cargo/bin:$PATH
       export PATH=~/go/bin:$PATH
+      export PATH=~/.local/bin:$PATH
       export TERM=kitty
       export EDITOR=hx
 
