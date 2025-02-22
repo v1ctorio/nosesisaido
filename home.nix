@@ -32,9 +32,9 @@ in
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs-stable; [
-
+    gamescope
     ungoogled-chromium
-    vscode
+    pkgs-unstable.vscode
     pkgs-unstable.zed-editor
 
     pkgs-unstable.legcord

@@ -29,9 +29,6 @@
     
   };
 
-  hardware.graphics.extraPackages = with pkgs-stable; [
-    amdvlk
-  ];
   hardware.graphics.enable = true;
 
 
