@@ -1,7 +1,8 @@
 # Default config for sway
 # Read `man 5 sway` for a complete reference.
 
-default_border none
+default_border pixel
+default_floating_border normal
 
 ### Variables
 set $mod Mod4
@@ -146,3 +147,31 @@ exec_always {
     gsettings set org.gnome.desktop.interface cursor-size 24
     gsettings set org.gnome.desktop.interface gtk-theme "Adwaita"
 }
+
+set $left h
+set $down j
+set $up k
+set $right l
+mode "resize" {
+    # left will shrink the containers width
+    # right will grow the containers width
+    # up will shrink the containers height
+    # down will grow the containers height
+    bindsym $left resize shrink width 10px
+    bindsym $down resize grow height 10px
+    bindsym $up resize shrink height 10px
+    bindsym $right resize grow width 10px
+
+    # Ditto, with arrow keys
+    bindsym Left resize shrink width 10px
+    bindsym Down resize grow height 10px
+    bindsym Up resize shrink height 10px
+    bindsym Right resize grow width 10px
+
+    # Return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+g mode "resize"
+
+smart_borders on
