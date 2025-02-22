@@ -21,7 +21,12 @@
       pkgs.xdg-desktop-portal-gtk # gtk portal needed to make gtk apps happy
     ];
   };
-
+  
+  swapDevices = [{
+    device = "/swapfile";
+    size = 8 * 1024; # 16GB
+  }];
+  
   programs.steam = {
     enable = true;
   }; # for remote play 
