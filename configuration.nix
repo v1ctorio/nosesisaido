@@ -24,7 +24,7 @@
 
   };
 
-  nix.trustedUsers = [ "root" "vic": ];
+  nix.trustedUsers = [ "root" "vic" ];
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
