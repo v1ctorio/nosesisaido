@@ -31,6 +31,7 @@
 
   networking.networkmanager.enable = true;
 
+  services.tailscale.enable = true;
   # Set your time zone.
   time.timeZone = "Europe/Madrid";
 
@@ -74,6 +75,7 @@
     services.xserver = {
       xkb.layout = "us";
       xkb.variant = "";
+      videoDrivers = [ "amdgpu" ];
     };
 
 
@@ -159,7 +161,6 @@ p9fGSQgaH0TZi3lDRt9P3X9rN25d
     pavucontrol
     pamixer
     polkit_gnome
-    kate
     git
     alsa-utils
     mpv

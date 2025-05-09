@@ -20,6 +20,6 @@ pkgs-stable.bottles
 spice-gtk
 virt-viewer
 gnome-boxes
-
+aegisub
   ];
 }

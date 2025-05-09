@@ -102,7 +102,12 @@
   
   nix.settings.auto-optimise-store = true;
 
-
+  hardware.graphics = {
+    enable = true;
+  };
+  hardware.graphics.extraPackages = with pkgs; [
+    amdvlk
+  ];
 
 #  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
