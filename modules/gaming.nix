@@ -29,7 +29,7 @@
     
   };
 
-  hardware.graphics.enable = true;
-
+  environment.systemPackages = with pkgs-stable; [ lact ];
+  systemd.packages = with pkgs-stable; [ lact ];
 
 }

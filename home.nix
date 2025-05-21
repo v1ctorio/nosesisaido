@@ -47,7 +47,7 @@ in
 
     mpc-cli
     gnome-solanum
-    
+    kdePackages.dolphin    
     feishin
     # Emulation
     #cemu
@@ -115,7 +115,9 @@ pika-backup
   zoom-us
 
   jrnl
-wayvnc  
+wayvnc
+
+kdePackages.qt6ct  
   ];
 
   programs.helix = {
@@ -202,7 +204,7 @@ wayvnc
   name = "Bibata-Modern-Classic";
   size = 10;
   };
-
+/*
   gtk = {
     enable = true;
     theme = {
@@ -221,7 +223,7 @@ wayvnc
     };
 	  };
 
-
+*/
 /*
   programs.spicetify =
     {

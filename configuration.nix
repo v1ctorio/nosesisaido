@@ -66,9 +66,10 @@
   services.xserver.enable = true;
 
 
-  # Enable the GNOME Desktop Environment.
+
   services.xserver.desktopManager.gnome.enable = true;
 
+  hardware.enableRedistributableFirmware = true;
 
   security.polkit.enable = true;
     # Configure keymap in X11
@@ -150,7 +151,16 @@ p9fGSQgaH0TZi3lDRt9P3X9rN25d
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-
+  /*
+  services.desktopManager.plasma6.enable = true;
+  qt = {
+    enable = true;
+    platformTheme = "qt5ct";
+    style = "breeze";
+  };
+  */
+  programs.dconf.enable = true;
+  
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget

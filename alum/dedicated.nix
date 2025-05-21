@@ -21,6 +21,9 @@
       pkgs.xdg-desktop-portal-gtk # gtk portal needed to make gtk apps happy
     ];
   };
+
+
+  hardware.amdgpu.initrd.enable = true
   
   swapDevices = [{
     device = "/swapfile";

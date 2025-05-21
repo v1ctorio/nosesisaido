@@ -56,6 +56,7 @@
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
+  programs.ns-usbloader.enable = true;
   programs.mtr.enable = true;
   programs.gnupg.agent = {
     enable = true;
@@ -104,10 +105,8 @@
 
   hardware.graphics = {
     enable = true;
+    enable32Bit = true;
   };
-  hardware.graphics.extraPackages = with pkgs; [
-    amdvlk
-  ];
 
 #  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
