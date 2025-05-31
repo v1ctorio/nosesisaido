@@ -13,7 +13,7 @@
     ];
 
 
-  networking.hostName = "nosesisaid"; # Define your hostname.
+  networking.hostName = "framework"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -27,9 +27,7 @@
 
 
   environment.systemPackages = with pkgs; [
-    jdk17
     jdk21
-    android-tools
     pcscliteWithPolkit
     ffmpeg
     sbctl
@@ -41,23 +39,10 @@
 
     pkgs-unstable.libdrm
     
-    godot_4
-    inputs.zen-browser.packages."${system}".default
     ];
-
-    #services.kbfs = {
-   #   enable = true;
-  #    mountPoint = "%t/kbfs";
- #     extraFlags = [ "-label %u" ];
-#
- #     };
-
-#    services.keybase.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
-  programs.ns-usbloader.enable = true;
-  programs.mtr.enable = true;
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
@@ -93,13 +78,13 @@
   #virtualisation.docker.enable = true;
 
 
-  boot.loader.systemd-boot.configurationLimit = 7;
+#  boot.loader.systemd-boot.configurationLimit = 7;
 
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 7d";
-  };
+#  nix.gc = {
+ #   automatic = true;
+  #  dates = "weekly";
+   # options = "--delete-older-than 7d";
+  #};
   
   nix.settings.auto-optimise-store = true;
 
@@ -110,10 +95,7 @@
 
 #  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
-  programs.gamemode.enable = true;
 
 
-  # adguard home 
-  # this not working networking.nameservers = [ "192.168.1.155" "1.1.1.1" ];
 
 }

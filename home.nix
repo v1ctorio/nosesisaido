@@ -11,8 +11,8 @@ in
      ];
 
 
-  home.username = "vic";
-  home.homeDirectory = "/home/vic";
+  home.username = "antonio";
+  home.homeDirectory = "/home/antonio";
 
   # link the configuration file in current directory to the specified location in home directory
   # home.file.".config/i3/wallpaper.jpg".source = ./wallpaper.jpg;
@@ -32,30 +32,15 @@ in
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs-stable; [
-    gamescope
-    ungoogled-chromium
-    pkgs-unstable.vscode
-    pkgs-unstable.zed-editor
 
     pkgs-unstable.legcord
     kooha
-    pkgs-unstable.prismlauncher
-    #TODO: make this work yubioath-flutter
     pkgs-unstable.obsidian
     pkgs-unstable.vivaldi
     pkgs-unstable.gnome-sound-recorder
 
     mpc-cli
-    gnome-solanum
     kdePackages.dolphin    
-    feishin
-    # Emulation
-    #cemu
-    #anki-bin
-    #katawa-shoujo-re-engineered
-
-pika-backup
-    
     neofetch
     bat
     nnn # terminal file manager
@@ -103,21 +88,10 @@ pika-backup
 
    brave
 
-   helix-gpt
-   termius
-   antares
-   slack
-   doppler
    youtube-music
 
 
-  # absolute crap
-  zoom-us
 
-  jrnl
-wayvnc
-
-kdePackages.qt6ct  
   ];
 
   programs.helix = {
@@ -129,16 +103,6 @@ kdePackages.qt6ct
   };
 
  # basic configuration of git, please change to your own
-  programs.git = {
-    enable = true;
-    userName = "vic";
-    userEmail = "74506415+v1ctorio@users.noreply.github.com";
-    extraConfig = {
-      init.defaultBranch = "main";
-      gpg.format = "ssh";
-      core.editor = "nvim";
-    };
-  };
 
   programs.ssh = {
     enable = true;
@@ -192,7 +156,6 @@ kdePackages.qt6ct
     functions = {
       rebootuefi = "echo 'rebooting to UEFI...'; sudo systemctl reboot --firmware-setup";
       tilderadio = "mpv https://azuracast.tilderadio.org/radio/8000/radio.ogg";
-      windowstime = "echo 'rebooting to windows...'; sudo systemctl reboot --boot-loader-entry=auto-windows";
     };
   };
 
