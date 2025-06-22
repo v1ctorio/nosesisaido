@@ -112,7 +112,7 @@
 
   programs.gamemode.enable = true;
 
-
+virtualisation.waydroid.enable = true;
   # adguard home 
   # this not working networking.nameservers = [ "192.168.1.155" "1.1.1.1" ];
 
